@@ -1,0 +1,49 @@
+@import '../../node_modules/normalize.css/normalize';
+
+@import 'mixins';
+@import 'variables';
+@import 'base';
+
+html.embedded, html {
+  // Applied when embedded using Pym.js
+  font-size: 10px;
+}
+
+body {
+  // This helps Pym.js more more accurately measure our <body>
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+}
+
+.label {
+  @include type(1.1rem, 1.5rem, 0);
+  margin: .9rem 0 0 0;
+}
+.bar__container {
+  width: 95%;
+  clear: left;
+}
+.gas__bar {
+  background-color: $chartBlue;
+  height: 15px;
+  display: block;
+  float: left;
+  margin-right: 5px;
+}
+
+.gas__count {
+  float: left;
+  @include type(1.3rem, 1.5rem, 0);
+  font-weight: bold;
+}
+
+.source {
+  text-align: right;
+  @include type(1.1rem, 1.5rem, 0);
+}
+
+
+// Your styles go here
